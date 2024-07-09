@@ -1,4 +1,4 @@
-This is the code for the paper "AGFA-Net: Attention-Guided Feature-Aggregated Network for Coronary Artery Segmentation using Computed Tomography Angiography"
+This is the code for the paper "**AGFA-Net: Attention-Guided Feature-Aggregated Network for Coronary Artery Segmentation using Computed Tomography Angiography**"
 
 Dataset: CCTA dataset
 
@@ -6,7 +6,7 @@ Dataset: CCTA dataset
 
 Explanation for the code:
 
-1， 01_File_process.py.  What is this file doing: First, rename the original 80G data to a folder name and file name. Then move all the files to the specified folder, and finally move the labeled files to the trainMask folder.
+1. 01_File_process.py.  What is this file doing: First, rename the original 80G data to a folder name and file name. Then move all the files to the specified folder, and finally move the labeled files to the trainMask folder.
 
 2. 01_saveDataToTrain.py  converts the data of train and trainMask into dataset format (.pth file) and saves it in 5 parts.
 
