@@ -142,22 +142,20 @@ print("len(dataloader_mask :",len(dataloader_mask))
 iter_img = iter(dataloader_img)
 iter_mask = iter(dataloader_mask)
 
-Test_Model = {'CSNet3D': CSNet3D,
-              'UNet3D': UNet3D
-              }
-def load_net():
-    model = Test_Model[args['model_name']](2, 1).to(device)
-    ckpt_path = os.path.join(args['model_path'], args['model_name'] + '_' + args['folder'])
-    # modelname = ckpt_path + '/' + 'best_score' + '_checkpoint300epo.pkl'
-    modelname = ckpt_path + '/' + '2024-02-20-200.pkl'
 
-    model = nn.DataParallel(model)  # 并行
-    checkpoint = torch.load(modelname)
-    # model.load_state_dict(checkpoint)
+# def load_net():
+#     model = Test_Model[args['model_name']](2, 1).to(device)
+#     ckpt_path = os.path.join(args['model_path'], args['model_name'] + '_' + args['folder'])
+#     # modelname = ckpt_path + '/' + 'best_score' + '_checkpoint300epo.pkl'
+#     modelname = ckpt_path + '/' + '2024-02-20-200.pkl'
 
-    return model
+#     model = nn.DataParallel(model)  # 并行
+#     checkpoint = torch.load(modelname)
+#     # model.load_state_dict(checkpoint)
 
-net = load_net()
+#     return model
+
+
 
 critrion2 = WeightedCrossEntropyLoss().to(device)
 critrion = nn.CrossEntropyLoss().to(device)
